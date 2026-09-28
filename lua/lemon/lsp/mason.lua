@@ -27,7 +27,7 @@ local package_list = {
   -- rust
   "rust_analyzer",
 }
-if os_name == "Windows_NT" then
+if OS_NAME == "Windows_NT" then
   for _ = 1, 4 do
     table.remove(package_list, 3) -- removing bashls, beautysh, shellcheck & clang-format
   end
