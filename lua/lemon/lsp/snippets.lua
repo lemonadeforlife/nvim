@@ -6,64 +6,64 @@ local c = ls.choice_node
 local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets("yaml", {
-	s(
-		"name",
-		fmt(
-			[[
+  s(
+    "name",
+    fmt(
+      [[
   - name: {}
     disabled: {}
 
 {}
     ]],
-			{
-				i(1),
-				c(2, {
-					t("true"),
-					t("false"),
-				}),
-				i(0),
-			}
-		)
-	),
+      {
+        i(1),
+        c(2, {
+          t("true"),
+          t("false"),
+        }),
+        i(0),
+      }
+    )
+  ),
 })
 
 ls.add_snippets("html", {
-	s(
-		"but.",
-		fmt(
-			[[
+  s(
+    "but.",
+    fmt(
+      [[
 <button class="{}">{}</button>{}
   ]],
-			{
-				i(1),
-				i(2),
-				i(0),
-			}
-		)
-	),
+      {
+        i(1),
+        i(2),
+        i(0),
+      }
+    )
+  ),
 })
 
 ls.add_snippets("html", {
-	s(
-		"but#",
-		fmt(
-			[[
+  s(
+    "but#",
+    fmt(
+      [[
 <button id="{}">{}</button>{}
   ]],
-			{
-				i(1),
-				i(2),
-				i(0),
-			}
-		)
-	),
+      {
+        i(1),
+        i(2),
+        i(0),
+      }
+    )
+  ),
 })
 
 ls.add_snippets("c", {
-	s(
-		"inc",
-		fmt(
-			[[
+  s(
+    "inc",
+    fmt(
+      [[
 #include<stdio.h>
 
 int main()
@@ -73,25 +73,25 @@ int main()
   return 0;
 }}
   ]],
-			{
-				c(1, {
-					t("int"),
-					t("double"),
-					t("float"),
-					t("char"),
-				}),
-				i(2),
-				i(0, "// Write your code here"),
-			}
-		)
-	),
+      {
+        c(1, {
+          t("int"),
+          t("double"),
+          t("float"),
+          t("char"),
+        }),
+        i(2),
+        i(0, "// Write your code here"),
+      }
+    )
+  ),
 })
 
 ls.add_snippets("c", {
-	s(
-		"inm",
-		fmt(
-			[[
+  s(
+    "inm",
+    fmt(
+      [[
 #include<stdio.h>
 #include<math.h>
 
@@ -103,26 +103,26 @@ int main()
   return 0;
 }}
   ]],
-			{
-				c(1, {
-					t("int"),
-					t("double"),
-					t("float"),
-					t("char"),
-				}),
-				i(2),
-				i(3, "// Write your code here"),
-				i(0),
-			}
-		)
-	),
+      {
+        c(1, {
+          t("int"),
+          t("double"),
+          t("float"),
+          t("char"),
+        }),
+        i(2),
+        i(3, "// Write your code here"),
+        i(0),
+      }
+    )
+  ),
 })
 
 ls.add_snippets("c", {
-	s(
-		"ini",
-		fmt(
-			[[
+  s(
+    "ini",
+    fmt(
+      [[
 #include<stdio.h>
 
 int main()
@@ -138,29 +138,29 @@ int main()
   return 0;
 }}
   ]],
-			{
-				c(1, {
-					t("int"),
-					t("double"),
-					t("float"),
-					t("char"),
-				}),
-				i(2),
-				i(3),
-				i(4),
-				i(5),
-				i(6),
-				i(0),
-			}
-		)
-	),
+      {
+        c(1, {
+          t("int"),
+          t("double"),
+          t("float"),
+          t("char"),
+        }),
+        i(2),
+        i(3),
+        i(4),
+        i(5),
+        i(6),
+        i(0),
+      }
+    )
+  ),
 })
 
 ls.add_snippets("c", {
-	s(
-		"ine",
-		fmt(
-			[[
+  s(
+    "ine",
+    fmt(
+      [[
 #include<stdio.h>
 
 int main()
@@ -179,31 +179,31 @@ int main()
   return 0;
 }}
   ]],
-			{
-				c(1, {
-					t("int"),
-					t("double"),
-					t("float"),
-					t("char"),
-				}),
-				i(2),
-				i(3),
-				i(4),
-				i(5),
-				i(6),
-				i(7),
-				i(8),
-				i(0),
-			}
-		)
-	),
+      {
+        c(1, {
+          t("int"),
+          t("double"),
+          t("float"),
+          t("char"),
+        }),
+        i(2),
+        i(3),
+        i(4),
+        i(5),
+        i(6),
+        i(7),
+        i(8),
+        i(0),
+      }
+    )
+  ),
 })
 
 ls.add_snippets("cpp", {
-	s(
-		"#i",
-		fmt(
-			[[
+  s(
+    "#i",
+    fmt(
+      [[
 #include <bits/stdc++.h>
 #define fastio ios::sync_with_stdio(false); cin.tie(nullptr)
 using namespace std;
@@ -213,9 +213,35 @@ int main() {{
   return 0;
 }}
     ]],
-			{
-				i(0, "// Write your bugs here (¬_¬)"),
-			}
-		)
-	),
+      {
+        i(0, "// Write your bugs here (¬_¬)"),
+      }
+    )
+  ),
+})
+
+ls.add_snippets("desktop", {
+  s(
+    "entry",
+    fmt(
+      [[
+[Desktop Entry]
+Type=Application
+Name={}
+Comment={}
+Exec={}
+Icon={}
+Terminal={}
+Categories={}
+]],
+      {
+        i(1, "My App"),
+        i(2, "Short description"),
+        i(3, "/path/to/bin %U"),
+        i(4, "utilities-terminal"),
+        c(5, { t("false"), t("true") }),
+        i(6, "Development;Utility;"),
+      }
+    )
+  ),
 })
